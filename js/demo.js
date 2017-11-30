@@ -51,7 +51,7 @@ $(
   		
   		{
   				var top = now_position-3*w;
-	  			$(".man").css("left","75px"); 
+	  			// $(".man").css("left","75px"); 
 	  			$(".fixed").css({"left":-3*w,"top":-top}); 
   		/*	if(now_position >= (4*w+2*h)&&now_position<(4*w+3*h))
   			{
@@ -77,51 +77,65 @@ $(
   				theEnd = true;
   			}
   			
-  		}
-
+			}
+			// if(Math.abs(now_position - pre_position) > 10) {
+				// $(".man").toggleClass('walk');
+				var str = '';
+				switch(whichFoot)
+				{
+					case 1:
+							
+							str = '0 0';
+							whichFoot=2;
+							break;
+					case 2:
+							whichFoot=3;
+							str = "-200px 0";
+							break;
+			
+					case 3:
+							whichFoot = 4;
+							str ="-400px 0";
+							break;
+					case 4:
+						whichFoot=1;
+						str ="-600px 0";
+						break;	
+					
+				}
+				setTimeout(function() {
+					$(".man").css("background-position",str);
+				}, 200);
+			// }
   		/*----moving and direction*/
   		if(now_position<pre_position)
 		{	
 			$(".man").addClass("rotateX");
-				switch(whichFoot)
-				{
-				case 1:
-						
-						$(".man").css("background-position","-163px -1px");
-						whichFoot=2;
-						break;
-				case 2:
-						whichFoot=3;
-						$(".man").css("background-position","-314px -1px");
-						break;
-		
-				case 3:
-						whichFoot=1;
-						$(".man").css("background-position","-6px -1px");
-						break;
-				}
+			
+			
+				
 		}	
 
 		if(now_position>=pre_position)
 		{	
 			$(".man").removeClass("rotateX");
-				switch(whichFoot)
-				{
-				case 1:
+				// switch(whichFoot)
+				// {
+				// case 1:
 						
-						$(".man").css("background-position","-163px -1px");
-						whichFoot=2;
-						break;
-				case 2:
-						whichFoot=3;
-						$(".man").css("background-position","-314px -1px");
-						break;
+				// 		$(".man").css("background-position","-163px -1px");
+				// 		whichFoot=2;
+				// 		break;
+				// case 2:
+				// 		whichFoot=3;
+				// 		$(".man").css("background-position","-314px -1px");
+				// 		break;
 		
-				case 3:
-						whichFoot=1;
-						$(".man").css("background-position","-6px -1px");
-						break;
-				}
+				// case 3:
+				// 		whichFoot=1;
+				// 		$(".man").css("background-position","-6px -1px");
+				// 		break;
+				// }
 		}	
 		
   		pre_position = now_position;

@@ -35,10 +35,10 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
     position: absolute;
     left: 0;
     top: 0;
-    -webkit-animation: slideUp 4s linear 10s forwards;
-   -moz-animation: slideUp 4s linear 10s forwards;
-   -ms-animation: slideUp 4s linear 10s forwards;
-    animation: slideUp 4s linear 10s forwards; 
+    -webkit-animation: slideUp 4s linear 1s forwards;
+   -moz-animation: slideUp 4s linear 1s forwards;
+   -ms-animation: slideUp 4s linear 1s forwards;
+    animation: slideUp 4s linear 1s forwards; 
 
 }
 .info{
@@ -66,15 +66,19 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 }
 
 .man{
-    width: 150px;
+    width: 200px;
     height: 200px;
     position: fixed;
     left: 75px;
     margin-left: -75px;
     bottom: 10px;
     z-index: 99;
-    background: url('../images/man.png') no-repeat ;
-    background-position: -6px -1px;
+    background: url('../images/man.png') no-repeat;
+    background-position: 0 0;
+}
+.man.walk {
+    background: url('../images/man_2.png') no-repeat; 
+    
 }
 .rotateX{
     -moz-transform:scaleX(-1);
