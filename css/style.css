@@ -1,0 +1,163 @@
+
+#content {
+  height: 0px;
+  overflow: hidden;
+}
+
+#container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#loading {
+  position: absolute;
+  text-align: center;
+  padding: 70px;
+  box-sizing: border-box;
+  background: #fff;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+#loading p {
+  font-size: 50px;
+}
+
+#intro {
+  position: absolute;
+  width: 650px;
+  left: 50%;
+  margin-left: -325px;
+  top: 0;
+  z-index: 2;
+}
+
+.say_hi{
+  font-size: 70px;
+  font-weight: 650;
+  color: #9FB6CD;
+  font-family: "微软雅黑";
+}
+
+.my-info p {
+  font-size: 45px;
+  text-indent: 120px;
+  width: 98%;
+  margin: 0 auto;
+}
+.info_tip{
+
+  font-size: 30px;
+  color: #C1CDCD;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 300px;
+  font-weight: 700;
+}
+.my-info p b{
+  color: #EE6A50;
+   font-size: 78px;
+}
+.my-info p em{
+  color: #B4EEB4;
+   font-size: 78px;
+}
+.my-info  .info_detail{
+  text-indent: 0;
+
+}
+.my-info .rule{
+  color: #666;
+  font-size: 19px;
+  margin: 5px auto;
+  text-indent: 0;
+  text-align: center;
+
+}
+.my-info .button{
+  display: block;
+  width: 120px;
+  height: 55px;
+  margin: 25px auto 0 auto;
+  background: #B0C4DE;
+  border-radius: 5px;
+  font-size: 33px;
+  color: #fff;
+  border: none;
+  text-align: center;
+}
+.button:hover,.button:active{
+  background: #EE5C42;
+}
+
+.layer-horizontal {
+  position: absolute;
+  /* background-color: #ecfbff; */
+  width: 20000px;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.layer-horizontal .background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url('../images/background.png');
+}
+.layer-horizontal .trees {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  width: 100%;
+  height: 240px;
+  background: url('../images/trees.png');
+}
+.layer-horizontal .info {
+  position: absolute;
+  font-size: 50px;
+  background: #14cfff;
+  border: 4px solid #333;
+  color: #fff;
+  padding: 40px 30px;
+  text-align: center;
+  border-radius: 8px;
+  left: 2000px;
+  top: 30%;
+  width: 540px;
+  margin-top: -50px;
+}
+.layer-vertical {
+  position: relative;
+  width: 1000px;
+  height: 3000px;
+  left: 2000px;
+  bottom: 3000px;
+}
+#people-container {
+  position: fixed;
+  width: 200px;
+  height: 190px;
+  left: 50px;
+  bottom: 70px;
+  overflow: hidden;
+}
+#people {
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  left: 0;
+  top: 0;
+  background: url('../images/people.png') no-repeat;
+}
+
+#page {
+  height: 2340px;
+}
