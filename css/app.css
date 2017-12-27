@@ -1,10 +1,77 @@
-
-#content {
-  height: 0px;
-  overflow: hidden;
+body {
+  background: #3acfff;
 }
 
-#container {
+@keyframes loadingScale {
+  0% {
+    transform: scale(1);
+    background: #fff;
+  }
+  100% {
+    transform: scale(.3);
+    background: #c1c1c1;
+  }
+}
+
+@keyframes shine {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+
+
+
+.loading {
+  /* display: none; */
+  position: absolute;
+  background: #3ad0ff;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+
+
+.loading-circle_list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loading-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+  display: inline-block;
+  background-color: #fff;
+  animation-name: loadingScale;
+  animation-duration: 1.2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.loading-circle-left  {
+  animation-delay: 0s;
+}
+
+.loading-circle-center {
+  animation-delay: .4s;
+}
+
+.loading-circle-right {
+  animation-delay: .8s;
+}
+
+
+.content {
   position: fixed;
   left: 0;
   top: 0;
@@ -13,97 +80,25 @@
   overflow: hidden;
 }
 
-#loading {
-  position: absolute;
-  text-align: center;
-  padding: 70px;
-  box-sizing: border-box;
-  background: #fff;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 4;
-}
-#loading p {
-  font-size: 50px;
-}
-
-#intro {
-  position: absolute;
-  width: 650px;
-  left: 50%;
-  margin-left: -325px;
-  top: 0;
-  z-index: 2;
-}
-
-.say_hi{
-  font-size: 70px;
-  font-weight: 650;
-  color: #9FB6CD;
-  font-family: "微软雅黑";
-}
-
-.my-info p {
-  font-size: 45px;
-  text-indent: 120px;
-  width: 98%;
-  margin: 0 auto;
-}
-.info_tip{
-
-  font-size: 30px;
-  color: #C1CDCD;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 300px;
-  font-weight: 700;
-}
-.my-info p b{
-  color: #EE6A50;
-   font-size: 78px;
-}
-.my-info p em{
-  color: #B4EEB4;
-   font-size: 78px;
-}
-.my-info  .info_detail{
-  text-indent: 0;
-
-}
-.my-info .rule{
-  color: #666;
-  font-size: 19px;
-  margin: 5px auto;
-  text-indent: 0;
-  text-align: center;
-
-}
-.my-info .button{
-  display: block;
-  width: 120px;
-  height: 55px;
-  margin: 25px auto 0 auto;
-  background: #B0C4DE;
-  border-radius: 5px;
-  font-size: 33px;
-  color: #fff;
-  border: none;
-  text-align: center;
-}
-.button:hover,.button:active{
-  background: #EE5C42;
-}
 
 .layer-horizontal {
-  position: absolute;
-  /* background-color: #ecfbff; */
+  position: relative;
   width: 20000px;
   height: 100%;
   left: 0;
   top: 0;
 }
+
+
+.layer-horizontal .cloud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: url('../images/cloud.png');
+}
+
 .layer-horizontal .background {
   position: absolute;
   bottom: 0;
@@ -112,52 +107,149 @@
   height: 100px;
   background: url('../images/background.png');
 }
+
+.layer-horizontal .mountain {
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 100%;
+  height: 800px;
+  background: url(../images/mountain.png);
+  background-size: auto 800px;
+}
+
 .layer-horizontal .trees {
   position: absolute;
-  bottom: 100px;
+  bottom: 90px;
   left: 0;
   width: 100%;
-  height: 240px;
-  background: url('../images/trees.png');
+  height: 300px;
+  background: url(../images/trees.png);
+  background-size: auto 300px;
 }
-.layer-horizontal .info {
+
+.layer-horizontal .project {
   position: absolute;
-  font-size: 50px;
-  background: #14cfff;
-  border: 4px solid #333;
-  color: #fff;
-  padding: 40px 30px;
+  top: 36%;
+  margin-top: -200px;
+  width: 500px;
+  height: 500px;
+  background: url(../images/project.png);
+  background-size: cover;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.layer-horizontal .project-title {
+  font-size: 30px;
   text-align: center;
-  border-radius: 8px;
-  left: 2000px;
-  top: 30%;
-  width: 540px;
-  margin-top: -50px;
 }
-.layer-vertical {
-  position: relative;
-  width: 1000px;
-  height: 3000px;
-  left: 2000px;
-  bottom: 3000px;
+
+.layer-horizontal .project-img {
+  position: absolute;
+  width: 120px;
+  height: 210px;
+  background: #ddd;
+  border: 1px solid #dfdfdf;
+  left: 100px;
+  top: 100px;
 }
+
+.layer-horizontal .project-desc {
+  padding-left: 220px;
+}
+
+.layer-horizontal .project-1 {
+  left: 6000px;
+}
+
+
+.layer-horizontal .project-2 {
+  left: 8000px;
+}
+
+
+.layer-horizontal .block {
+  position: absolute;
+  bottom: 80px;
+  width: 300px;
+  height: 220px;
+  background: url(../images/pipe.png) no-repeat;
+  background-size: cover;
+}
+
+.layer-horizontal .block1 {
+  left: 2000px;
+  
+}
+.layer-horizontal .block2 {
+  left: 4000px;
+  height: 160px;
+}
+
+
+
+
+
 #people-container {
   position: fixed;
   width: 200px;
-  height: 190px;
+  height: 200px;
   left: 50px;
   bottom: 70px;
   overflow: hidden;
 }
-#people {
+
+.people {
   position: absolute;
-  width: 600px;
+  width: 800px;
   height: 400px;
   left: 0;
   top: 0;
   background: url('../images/people.png') no-repeat;
 }
 
-#page {
-  height: 2440px;
+.intro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 450px;
+  z-index: 10;
+}
+
+.intro-title {
+  font-size: 50px;
+  margin-bottom: 20px;
+  padding: 5px 20px;
+  border: 3px solid #333;
+  background: #fff;
+}
+
+.intro-desc {
+  font-size: 30px;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  border: 3px solid #333;
+  background: #fff;
+  width: 70%;
+  margin: 20px auto;
+}
+
+.intro-button {
+  border: none;
+  width: 130px;
+  height: 60px;
+  font-size: 24px;
+  border: 2px solid #333;
+  background: #fff;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.intro-tip {
+  color: #f1f1f1;
+  font-size: 22px;
+  animation: shine 1s infinite;
 }
